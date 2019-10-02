@@ -121,7 +121,7 @@ exports.isPosition = function (position, cb) {
     }
 
     position.forEach(function(pos, index) {
-      if (typeof pos !== 'number') {
+      if (typeof pos !== 'number' || isNaN(pos)) {
         errors.push('Position must only contain numbers. Item '+pos+' at index '+index+' is invalid.')
       }
     })

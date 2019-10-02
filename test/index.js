@@ -18,6 +18,10 @@ describe('Positions', function () {
   it('must be at least two elements', function () {
     assert.equal(false, GSV.isPosition([2]))
   })
+
+  it('must account for NaN values', function() {
+    assert.equal(false, GSV.isPosition([2, NaN]))
+  })
 })
 
 describe("GeoJSON Objects", function () {
