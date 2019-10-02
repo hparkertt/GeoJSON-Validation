@@ -227,7 +227,7 @@ exports.isPoint = function (point, cb) {
   if ('coordinates' in point) {
     exports.isPosition(point.coordinates, function (valid, err) {
       if (!valid) {
-        errors.push('Coordinates must be a single position')
+        errors = errors.concat(err);
       }
     })
   } else {
